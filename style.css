@@ -1,0 +1,26 @@
+
+#kepek{
+    display: flex;
+}
+img{
+    width: 10vw;
+    margin: auto;
+}
+#container{
+    
+    text-align: center;
+    width: 800px;
+    margin: auto;
+    box-shadow: 5px 5px 5px 5px lightgreen;
+    color: green;
+    border-radius: 3%;
+    font-family: Arial;
+}
+#pontok p{
+    color: red;
+    text-shadow: 1px 1px red;
+    padding-bottom: 1%;
+}
+div{
+    padding-top: 1%;
+}
