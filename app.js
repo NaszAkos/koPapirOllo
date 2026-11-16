@@ -1,7 +1,19 @@
 let jatekosPont = 0
 let gepPont = 0
+let jatekosNev
+let email
+function Ellenorzes(){
+    jatekosNev = document.getElementById("jatekosNev").value
+    email = document.getElementById("email").value
 
-
+    if(jatekosNev.length>20 || jatekosNev<8){
+        alert("A játékos neve 8-20 karakteres lehet")
+    }
+    else if(!isNaN(jatekosNev)){
+        alert("A játékos neve csak betűkből állhat")
+    }
+    
+}
 function jatek(elem){
     document.getElementById('ko').style.border = "0px solid white"
     document.getElementById('papir').style.border = "0px solid white"
