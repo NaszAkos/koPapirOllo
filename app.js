@@ -1,18 +1,15 @@
 let jatekosPont = 0
 let gepPont = 0
-let jatekosNev
-let email
-function Ellenorzes(){
+let jatekosNev = document.getElementById("jatekosNev").value
+let email = document.getElementById("email").value
+function ellenorzes(){
+  //  event.preventDefault()
     jatekosNev = document.getElementById("jatekosNev").value
     email = document.getElementById("email").value
-
-    if(jatekosNev.length>20 || jatekosNev<8){
+    console.log(jatekosNev)
+    if(jatekosNev.length>20 || jatekosNev.length<8){
         alert("A játékos neve 8-20 karakteres lehet")
     }
-    else if(!isNaN(jatekosNev)){
-        alert("A játékos neve csak betűkből állhat")
-    }
-    
 }
 function jatek(elem){
     document.getElementById('ko').style.border = "0px solid white"
@@ -37,7 +34,8 @@ function jatek(elem){
             eredmeny = "A gép nyert"
         }
         else{
-            eredmeny = "A játékos nyert"
+            eredmeny = `${jatekosNev} nyert`
+            
         }
     }
     else if(elem == "papir"){
@@ -48,7 +46,7 @@ function jatek(elem){
             eredmeny = "A gép nyert"
         }
         else{
-            eredmeny = "A játékos nyert"
+            eredmeny = `${jatekosNev} nyert` 
         }
     }
     else if(elem == "ollo"){
@@ -59,7 +57,7 @@ function jatek(elem){
             eredmeny = "A gép nyert"
         }
         else{
-            eredmeny = "A játékos nyert"
+            eredmeny = `${jatekosNev} nyert` 
         }
     }
     if (eredmeny == "A játékos nyert"){
