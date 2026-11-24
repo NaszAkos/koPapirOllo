@@ -20,6 +20,10 @@
                 <input type="text" id="jatekosNev">
                 <button type="button" onclick="ellenorzes()">Mentés</button>
             </form>
+            
+        </div>
+        <div>
+            <p id="hibaUzenet"></p>
         </div>
         <div>
 
@@ -35,9 +39,12 @@
             <h2>Gép választása</h2>
             <img src="img/ollo.png" alt="" id="gepValasztasKep">
         </div>
-    
+        <div>
+            <button onclick="ujrakezdes()">Ujrakezdes</button>
+        </div>
         <div >
             <h1 id="eredmenyH1">Eredmény: </h1>
+            <h2 id="vegsoEredmeny"></h2>
         </div>
     
         <div id="pontok">
@@ -46,9 +53,7 @@
             <h3>Gép pontja</h3>
             <p id="gepPontja">0</p>
         </div>
-        <div>
-            <button onclick="ujrakezdes()">Ujrakezdes</button>
-        </div>
+        
     </div>
     <script src="app.js"></script>
 </body>
