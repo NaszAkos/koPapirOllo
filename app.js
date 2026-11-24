@@ -12,9 +12,14 @@ function ellenorzes(){
     else if(jatekosNev.length>20 || jatekosNev.length<8){
         alert("A játékos neve 8-20 karakteres lehet")
     }
-    else if (jatekosNev.includes("0") || jatekosNev.includes("1") || jatekosNev.includes("2") || jatekosNev.includes("3") || jatekosNev.includes("4") || jatekosNev.includes("5") || jatekosNev.includes("6") || jatekosNev.includes("7") || jatekosNev.includes("8") || jatekosNev.includes("9")) {
+    else if (jatekosNev.includes("0") || jatekosNev.includes("1") || jatekosNev.includes("2") || jatekosNev.includes("3") 
+        || jatekosNev.includes("4") || jatekosNev.includes("5") || jatekosNev.includes("6") || jatekosNev.includes("7") 
+        || jatekosNev.includes("8") || jatekosNev.includes("9")) {
     alert("A név nem tartalmazhat számot!")
-}
+    }
+    else{
+        alert("Jók az adataid.")
+    }
 }
     
 
