@@ -5,26 +5,33 @@ let email
 let vegsoEredmeny
 
 function ellenorzes(){
+    
     jatekosNev = document.getElementById("jatekosNev").value
     email = document.getElementById("email").value
     
     if (!email.includes("@") || !email.includes(".")) {
         document.getElementById('hibaUzenet').innerHTML = "Hibás email cím!"
+        document.getElementById("kepek").style.pointerEvents = "none"
     }
     else if(jatekosNev.length>20 || jatekosNev.length<8){
         document.getElementById('hibaUzenet').innerHTML = "A játékos neve 8-20 karakteres lehet"
+        document.getElementById("kepek").style.pointerEvents = "none"
     }
     else if (jatekosNev.includes("0") || jatekosNev.includes("1") || jatekosNev.includes("2") || jatekosNev.includes("3") 
     || jatekosNev.includes("4") || jatekosNev.includes("5") || jatekosNev.includes("6") || jatekosNev.includes("7") 
     || jatekosNev.includes("8") || jatekosNev.includes("9")) {
         document.getElementById('hibaUzenet').innerHTML = "A név nem tartalmazhat számot!"
+        document.getElementById("kepek").style.pointerEvents = "none"
     }
     else{
         document.getElementById('hibaUzenet').innerHTML = "Jók az adataid."
+        document.getElementById("kepek").style.pointerEvents = "auto"
     }
+   
+    
 }
     
-
+document.getElementById("kepek").style.pointerEvents = "none"
 function jatek(elem){
     
     document.getElementById('ko').style.border = "0px solid white"
@@ -42,6 +49,10 @@ function jatek(elem){
     gepValasztasKep.src = `/img/${gepValasztas}.png`
 
     let eredmeny
+
+    
+
+
     if(elem == "ko"){
         if(gepValasztas == "ko"){
             eredmeny = "Döntetlen"
@@ -93,27 +104,30 @@ function jatek(elem){
     console.log(`\nAz eredmény: ${eredmeny}, játékos pontja: ${jatekosPont}, gép pontja: ${gepPont}\n`)
 
     if(jatekosPont == 10){
-        vegsoEredmeny.innerHTML = `Végső eredmény: ${jatekosNev} nyert`
-        jatekosPont = 0
-        gepPont = 0
+        vegsoEredmeny.innerHTML = `Végső eredmény: ${jatekosNev} nyert, nyomj az újrakezdés gombra`
+        document.getElementById("kepek").style.pointerEvents = "none"
         document.getElementById("jatekosPontja").innerHTML = jatekosPont
         document.getElementById("gepPontja").innerHTML = gepPont
+        
     }
     else if(gepPont == 10){
-        vegsoEredmeny.innerHTML = `Végső eredmény: A gép nyert`
-        jatekosPont = 0
-        gepPont = 0
+        vegsoEredmeny.innerHTML = `Végső eredmény: A gép nyert, nyomj az újrakezdés gombra`
+        document.getElementById("kepek").style.pointerEvents = "none"
         document.getElementById("jatekosPontja").innerHTML = jatekosPont
         document.getElementById("gepPontja").innerHTML = gepPont
+        
     }
+    return
 }
 
 function ujrakezdes(){
     jatekosPont = 0
     gepPont = 0
-    vegsoEredmeny.innerHTML = ""
+    vegsoEredmeny.innerHTML = "Még nincs végső eredmény"
     document.getElementById("jatekosPontja").innerHTML = jatekosPont
     document.getElementById("gepPontja").innerHTML = gepPont
+
+    document.getElementById("kepek").style.pointerEvents = "auto"
 
     document.getElementById('ko').style.border = "0px solid white"
     document.getElementById('papir').style.border = "0px solid white"
